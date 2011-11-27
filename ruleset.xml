@@ -1,25 +1,18 @@
 <?xml version="1.0"?>
-<ruleset name="BEAR">
+<ruleset name="modernphp">
     <!-- The name attribute of the ruleset tag is displayed when running PHP_CodeSniffer 
         with the -v command line argument. The description tag below is not displayed 
         anywhere except in this file, so it can contain information for developers 
         who may change this file in the future. -->
-    <description>modernphp coding standard</description>
+    <description>modernphp Coding Standard</description>
     <!-- You can hard-code ignore patterns directly into your custom standard 
         so you don't have to specify the patterns on the command line. -->
     <exclude-pattern>*/tests/*</exclude-pattern>
     <exclude-pattern>*/data/*</exclude-pattern>
     <exclude-pattern>*/doc/*</exclude-pattern>
-    <!-- Include all sniffs in the Squiz standard except one. Note that the 
-        name of the sniff being excluded is the code that the sniff is given by PHP_CodeSniffer 
-        and is based on the file name and path of the sniff class. You can display 
-        these codes using the -s command line argument when checking a file. -->
-        
-    <!-- <rule ref="Squiz"> <exclude name="Squiz.PHP.CommentedOutCode"/> </rule> -->
-    
-    <!-- Include some specific sniffs from the Generic standard. Note again 
-        that the name of the sniff is the code that PHP_CodeSniffer gives it. -->
     <!-- Include some additional sniffs from the Generic standard -->
+	<rule ref="Generic.Formatting.MultipleStatementAlignment.NotSame"><severity>0</severity></rule>
+	<rule ref="Generic.Formatting.SpaceAfterCast.NoSpace"><severity>0</severity></rule>
     <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
     <rule ref="Generic.NamingConventions.UpperCaseConstantName">
         <exclude name="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase"/>
@@ -34,14 +27,37 @@
             <property name="absoluteLineLimit" value="0"/>
         </properties>
     </rule>
-    
-    <!-- Squiz -->
-<rule ref="Squiz" />
-	<rule ref="Generic.Formatting.MultipleStatementAlignment.NotSame"><severity>0</severity></rule>
-	<rule ref="Generic.Formatting.SpaceAfterCast.NoSpace"><severity>0</severity></rule>
+    <!-- Use Unix newlines -->
+    <rule ref="Generic.Files.LineEndings">
+        <properties>
+            <property name="eolChar" value="\n"/>
+        </properties>
+    </rule>
+    <!-- Use warnings for inline control structures -->
+    <rule ref="Generic.ControlStructures.InlineControlStructure">
+        <properties>
+            <property name="error" value="false"/>
+        </properties>
+    </rule>
+
+    <!-- PEAR -->
+	<rule ref="PEAR.Functions.FunctionCallSignature.Indent"><severity>0</severity></rule>
 	<rule ref="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"><severity>0</severity></rule>
+	<rule ref="PEAR.Commenting.FileComment.MissingVersion"><severity>0</severity></rule>
+	<rule ref="PEAR.Commenting.FileComment.MissingTag"><severity>0</severity></rule>
+    <rule ref="PEAR.ControlStructures.ControlSignature"/>
+    <rule ref="PEAR.Functions.ValidDefaultValue"/>
+	<rule ref="PEAR.Functions.FunctionCallSignature.Indent"><severity>0</severity></rule>
+	<rule ref="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"><severity>0</severity></rule>
+	<rule ref="PEAR.Commenting.FileComment.MissingVersion"><severity>0</severity></rule>
+	<rule ref="PEAR.Commenting.FileComment.MissingTag"><severity>0</severity></rule>
+
+    <!-- Squiz -->
+<rule ref="Squiz" />	
 	<rule ref="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed"><severity>0</severity></rule>
 	<rule ref="Squiz.Classes.ClassDeclaration.EndFileAfterCloseBrace"><severity>0</severity></rule>
+	<rule ref="Squiz.Classes.ValidClassName.NotCamelCaps"><severity>0</severity></rule>
+	<rule ref="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast"><severity>0</severity></rule>
 	<rule ref="Squiz.Classes.ClassFileName.NoMatch"><severity>0</severity></rule>
 	<rule ref="Squiz.Classes.ClassDeclaration.SpaceBeforeComma"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.BlockComment.SingleLine"><severity>0</severity></rule>
@@ -56,8 +72,11 @@
 	<rule ref="Squiz.Commenting.ClosingDeclarationComment.Missing"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.InlineComment.NotCapital"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.InlineComment.InvalidEndChar"><severity>0</severity></rule>
+	<rule ref="Squiz.Commenting.FileComment.DuplicateTag"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.FileComment.IncorrectLicenseURL"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.FileComment.IncorrectLicenseName"><severity>0</severity></rule>
+	<rule ref="Squiz.Commenting.FileComment.IncorrectAuthor"><severity>0</severity></rule>
+	<rule ref="Squiz.Commenting.FileComment.IncorrectCopyright"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.FileComment.ShortFullStop"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.FileComment.ShortNotCapital"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.FileComment.SpacingAfterComment"><severity>0</severity></rule>
@@ -80,6 +99,7 @@
 	<rule ref="Squiz.Commenting.PostStatementComment.Found"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.VariableComment.MissingShort"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.VariableComment.ShortFullStop"><severity>0</severity></rule>
+	<rule ref="Squiz.Commenting.VariableComment.SpacingBeforeTags"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.VariableComment.IncorrectVarType"><severity>0</severity></rule>
 	<rule ref="Squiz.ControlStructures.ControlSignature"><severity>0</severity></rule>
 	<rule ref="Squiz.ControlStructures.ElseIfDeclaration.NotAllowed"><severity>0</severity></rule>
@@ -115,9 +135,11 @@
 	<rule ref="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"><severity>0</severity></rule>
 	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"><severity>0</severity></rule>
 	<rule ref="Squiz.WhiteSpace.OperatorSpacing.NoSpaceBeforeAmp"><severity>0</severity></rule>
-	
-	<rule ref="Generic.WhiteSpace.ScopeIndent.Incorrect"><severity>1</severity></rule>
-	<rule ref="Generic.Metrics.CyclomaticComplexity.TooHigh"><severity>1</severity></rule>
+    <rule ref="Squiz.Functions.GlobalFunction">
+        <exclude name="Squiz.Functions.GlobalFunction.Found"/>
+    </rule>
+		
+	<!-- severity=1 -->
 	<rule ref="Squiz.Strings.DoubleQuoteUsage.NotRequired"><severity>1</severity></rule>
 	<rule ref="Squiz.Commenting.FunctionComment.MissingShort"><severity>1</severity></rule>
 	<rule ref="Squiz.Commenting.FunctionComment.MissingReturnType"><severity>1</severity></rule>
@@ -127,24 +149,6 @@
     <rule ref="Squiz.Commenting.FunctionComment.MissingParamTag"><severity>1</severity></rule>
     <rule ref="Squiz.Commenting.FunctionComment.MissingReturn"><severity>1</severity></rule>
     <rule ref="Squiz.Commenting.FunctionCommentThrowTag.Missing"><severity>1</severity></rule>
-	
-    <!-- Use Unix newlines -->
-    <rule ref="Generic.Files.LineEndings">
-        <properties>
-            <property name="eolChar" value="\n"/>
-        </properties>
-    </rule>
-    <!-- Use warnings for inline control structures -->
-    <rule ref="Generic.ControlStructures.InlineControlStructure">
-        <properties>
-            <property name="error" value="false"/>
-        </properties>
-    </rule>
-    <!-- Zend -->
-    <rule ref="PEAR.ControlStructures.ControlSignature"/>
-    <rule ref="PEAR.Functions.FunctionCallSignature"/>
-    <rule ref="PEAR.Functions.ValidDefaultValue"/>
-    <rule ref="Squiz.Functions.GlobalFunction">
-        <exclude name="Squiz.Functions.GlobalFunction.Found"/>
-    </rule>
+	<rule ref="Generic.WhiteSpace.ScopeIndent.Incorrect"><severity>1</severity></rule>
+	<rule ref="Generic.Metrics.CyclomaticComplexity.TooHigh"><severity>1</severity></rule>
 </ruleset>

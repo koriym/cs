@@ -1,4 +1,4 @@
-'modernphp' Standard for PHP_CodeSniffer
+'modernphp' Standard for PHP_CodeSniffer v0.1
 ===============================================
 
 PEAR/Zendのコーディング規約をベースにしたモダンPHPのコード規約です。
