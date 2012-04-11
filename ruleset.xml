@@ -46,7 +46,6 @@
     <!-- PEAR -->
 	<rule ref="PEAR.Functions.FunctionCallSignature.Indent"><severity>0</severity></rule>
 	<rule ref="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"><severity>0</severity></rule>
-<<<<<<< HEAD
 	<rule ref="PEAR.Commenting.FileComment.MissingVersion"><severity>0</severity></rule>
 	<rule ref="PEAR.Commenting.FileComment.MissingTag"><severity>0</severity></rule>
     <rule ref="PEAR.ControlStructures.ControlSignature"/>
@@ -58,18 +57,18 @@
 
     <!-- Squiz -->
 <rule ref="Squiz" />	
-=======
 	<rule ref="Squiz.Arrays.ArrayDeclaration.KeyNotAligned"><severity>0</severity></rule>
->>>>>>> Be softer.
 	<rule ref="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed"><severity>0</severity></rule>
 	<rule ref="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"><severity>0</severity></rule>
 	<rule ref="Squiz.Arrays.ArrayBracketSpacing.SpaceBeforeBracket"><severity>0</severity></rule>
 	<rule ref="Squiz.Classes.ClassDeclaration.EndFileAfterCloseBrace"><severity>0</severity></rule>
+	<rule ref="Squiz.Classes.ClassDeclaration.SpaceBeforeName"><severity>0</severity></rule>
 	<rule ref="Squiz.Classes.ValidClassName.NotCamelCaps"><severity>0</severity></rule>
 	<rule ref="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast"><severity>0</severity></rule>
 	<rule ref="Squiz.Classes.ClassFileName.NoMatch"><severity>0</severity></rule>
 	<rule ref="Squiz.Classes.ValidClassName.NotCamelCaps"><severity>0</severity></rule>
 	<rule ref="Squiz.Classes.ClassDeclaration.SpaceBeforeComma"><severity>0</severity></rule>
+	<rule ref="Squiz.CodeAnalysis.EmptyStatement.NotAllowed"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.BlockComment.SingleLine"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.BlockComment.LineIndent"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.BlockComment.FirstLineIndent"><severity>0</severity></rule>
@@ -84,19 +83,11 @@
 	<rule ref="Squiz.Commenting.ClosingDeclarationComment.Missing"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.InlineComment.NotCapital"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.InlineComment.InvalidEndChar"><severity>0</severity></rule>
-<<<<<<< HEAD
-	<rule ref="Squiz.Commenting.FileComment.DuplicateTag"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FileComment.IncorrectLicenseURL"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FileComment.IncorrectLicenseName"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FileComment.IncorrectAuthor"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FileComment.IncorrectCopyright"><severity>0</severity></rule>
-=======
 	<rule ref="Squiz.Commenting.InlineComment.SpacingAfter"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.FileComment.IncorrectLicenseURL"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.FileComment.IncorrectLicenseName"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.FileComment.IncorrectCopyright"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.FileComment.IncorrectAuthor"><severity>0</severity></rule>
->>>>>>> Be softer.
 	<rule ref="Squiz.Commenting.FileComment.ShortFullStop"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.FileComment.ShortNotCapital"><severity>0</severity></rule>
 	<rule ref="Squiz.Commenting.FileComment.SpacingAfterComment"><severity>0</severity></rule>
