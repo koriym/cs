@@ -131,6 +131,7 @@
 	<rule ref="Squiz.NamingConventions.ValidFunctionName.PublicUnderscore"><severity>0</severity></rule>
 	<rule ref="Squiz.NamingConventions.ValidFunctionName.PrivateNoUnderscore"><severity>0</severity></rule>
 	<rule ref="Squiz.NamingConventions.ValidVariableName.PublicHasUnderscore"><severity>0</severity></rule>
+	<rule ref="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore"><severity>0</severity></rule>
 	<rule ref="Squiz.Objects.ObjectInstantiation.NotAssigned"><severity>0</severity></rule>
 	<rule ref="Squiz.Operators.ComparisonOperatorUsage.NotAllowed"><severity>0</severity></rule>
 	<rule ref="Squiz.Operators.ComparisonOperatorUsage.ImplicitTrue"><severity>0</severity></rule>
@@ -150,6 +151,8 @@
 	<rule ref="Squiz.WhiteSpace.FunctionSpacing.Before"><severity>0</severity></rule>
 	<rule ref="Squiz.WhiteSpace.MemberVarSpacing.After"><severity>0</severity></rule>
 	<rule ref="Squiz.WhiteSpace.OperatorSpacing.NoSpaceAfterAmp"><severity>0</severity></rule>
+	<rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing.Before"><severity>0</severity></rule>
+	<rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing.After"><severity>0</severity></rule>
 	<rule ref="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"><severity>0</severity></rule>
 	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"><severity>0</severity></rule>
 	<rule ref="Squiz.WhiteSpace.OperatorSpacing.NoSpaceBeforeAmp"><severity>0</severity></rule>
