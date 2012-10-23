@@ -3,6 +3,7 @@ BEAR, A Coding Standard for PHP_CodeSniffer
 
  * ≒ PSR-2
  * fix, add some.
+ * PHPMDのメッセージを日本語化
 
 Installation
 ------------
