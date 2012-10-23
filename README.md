@@ -1,5 +1,8 @@
-'modernphp' Standard for PHP_CodeSniffer v0.2
+BEAR, A Coding Standard for PHP_CodeSniffer
 ===============================================
+
+ * ≒ PSR-2
+ * fix, add some.
 
 Installation
 ------------
