@@ -1,172 +1,18 @@
 <?xml version="1.0"?>
-<ruleset name="modernphp">
-    <!-- The name attribute of the ruleset tag is displayed when running PHP_CodeSniffer 
-        with the -v command line argument. The description tag below is not displayed 
-        anywhere except in this file, so it can contain information for developers 
-        who may change this file in the future. -->
-    <description>modernphp Coding Standard</description>
-    <!-- You can hard-code ignore patterns directly into your custom standard 
-        so you don't have to specify the patterns on the command line. -->
-    <exclude-pattern>*/tests/*</exclude-pattern>
-    <exclude-pattern>*/data/*</exclude-pattern>
-    <exclude-pattern>*/doc/*</exclude-pattern>
-    <exclude-pattern>*/Trait/*</exclude-pattern>
-    <!-- Include some additional sniffs from the Generic standard -->
-	<rule ref="Generic.Formatting.MultipleStatementAlignment.NotSame"><severity>0</severity></rule>
-	<rule ref="Generic.Formatting.SpaceAfterCast.NoSpace"><severity>0</severity></rule>
-    <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
-	<rule ref="Generic.NamingConventions.ConstructorName.OldStyle"><severity>0</severity></rule>
-	<rule ref="Generic.Strings.UnnecessaryStringConcat.Found"><severity>1</severity></rule>
-    <rule ref="Generic.NamingConventions.UpperCaseConstantName">
-        <exclude name="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase"/>
-    </rule>
-    <rule ref="Generic.PHP.LowerCaseConstant"/>
-    <rule ref="Generic.PHP.DisallowShortOpenTag"/>
-    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
-    <!-- Lines can be 120 chars long, but never show errors -->
-    <rule ref="Generic.Files.LineLength">
-        <properties>
-            <property name="lineLimit" value="120"/>
-            <property name="absoluteLineLimit" value="0"/>
-        </properties>
-    </rule>
-    <!-- Use Unix newlines -->
-    <rule ref="Generic.Files.LineEndings">
-        <properties>
-            <property name="eolChar" value="\n"/>
-        </properties>
-    </rule>
-    <!-- Use warnings for inline control structures -->
-    <rule ref="Generic.ControlStructures.InlineControlStructure">
-        <properties>
-            <property name="error" value="false"/>
-        </properties>
+<ruleset name="BEAR">
+    <description>The BEAR coding standard.</description>
+
+    <!-- 2. General -->
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+    <rule ref="Zend.Debug.CodeAnalyzer"/>
+    <rule ref="Generic.Strings.UnnecessaryStringConcat"/>
+    <!-- 2.1 Basic Coding Standard -->
+
+    <!-- Include the whole PSR-2 standard -->
+    <rule ref="PSR2">
+        <exclude name="PSR2.Files.EndFileNewline.NotFound"/>
+        <exclude name="PSR2.Namespaces.UseDeclaration.MultipleDeclarations"/>
+        <exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments"/>
     </rule>
 
-    <!-- PEAR -->
-	<rule ref="PEAR.Functions.FunctionCallSignature.Indent"><severity>0</severity></rule>
-	<rule ref="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"><severity>0</severity></rule>
-	<rule ref="PEAR.Commenting.FileComment.MissingVersion"><severity>0</severity></rule>
-	<rule ref="PEAR.Commenting.FileComment.MissingTag"><severity>0</severity></rule>
-    <rule ref="PEAR.ControlStructures.ControlSignature"/>
-    <rule ref="PEAR.Functions.ValidDefaultValue"/>
-	<rule ref="PEAR.Functions.FunctionCallSignature.Indent"><severity>0</severity></rule>
-	<rule ref="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"><severity>0</severity></rule>
-	<rule ref="PEAR.Commenting.FileComment.MissingVersion"><severity>0</severity></rule>
-	<rule ref="PEAR.Commenting.FileComment.MissingTag"><severity>0</severity></rule>
-
-    <!-- Squiz -->
-<rule ref="Squiz" />	
-	<rule ref="Squiz.Arrays.ArrayDeclaration.KeyNotAligned"><severity>0</severity></rule>
-	<rule ref="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed"><severity>0</severity></rule>
-	<rule ref="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"><severity>0</severity></rule>
-	<rule ref="Squiz.Arrays.ArrayBracketSpacing.SpaceBeforeBracket"><severity>0</severity></rule>
-	<rule ref="Squiz.Classes.ClassDeclaration.EndFileAfterCloseBrace"><severity>0</severity></rule>
-	<rule ref="Squiz.Classes.ClassDeclaration.SpaceBeforeName"><severity>0</severity></rule>
-	<rule ref="Squiz.Classes.ValidClassName.NotCamelCaps"><severity>0</severity></rule>
-	<rule ref="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast"><severity>0</severity></rule>
-	<rule ref="Squiz.Classes.ClassFileName.NoMatch"><severity>0</severity></rule>
-	<rule ref="Squiz.Classes.ValidClassName.NotCamelCaps"><severity>0</severity></rule>
-	<rule ref="Squiz.Classes.ClassDeclaration.SpaceBeforeComma"><severity>0</severity></rule>
-	<rule ref="Squiz.CodeAnalysis.EmptyStatement.NotAllowed"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.BlockComment.SingleLine"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.BlockComment.LineIndent"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.BlockComment.FirstLineIndent"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.BlockComment.NoCaptial"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.BlockComment.NoCaptial"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.BlockComment.NoEmptyLineAfter"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.BlockComment"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.ClassComment.TagNotAllowed"><severity>0</severity></rule>
-    <rule ref="Squiz.Commenting.ClassComment.ShortFullStop"><severity>0</severity></rule>
-    <rule ref="Squiz.Commenting.ClassComment.ShortNotCapital"><severity>0</severity></rule>
-    <rule ref="Squiz.Commenting.ClassComment.LongNotCaptial"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.ClosingDeclarationComment.Missing"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.InlineComment.NotCapital"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.InlineComment.InvalidEndChar"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.InlineComment.SpacingAfter"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FileComment.IncorrectLicenseURL"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FileComment.IncorrectLicenseName"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FileComment.IncorrectCopyright"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FileComment.IncorrectAuthor"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FileComment.ShortFullStop"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FileComment.ShortNotCapital"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FileComment.SpacingAfterComment"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FileComment.MissingTag"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FileComment.SpacingAfterComment"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FileComment.SpacingAfterComment"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FileComment.SpacingAfterComment"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FunctionComment.ShortFullStop"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FunctionComment.IncorrectParamVarName"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FunctionComment.MissingParamComment"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FunctionComment.ParameterNamesNotAligned"><severity>1</severity></rule>
-	<rule ref="Squiz.Commenting.FunctionComment.ParamCommentNotCapital"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FunctionComment.TagNotAllowed"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FunctionComment.ShortNotCapital"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FunctionComment.ParamCommentFullStop"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FunctionComment.EmptyThrows"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FunctionComment.LongNotCapital"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.FunctionComment.SpacingBeforeTags"><severity>0</severity></rule>
-    <rule ref="Squiz.Commenting.FunctionComment.SeeIndent"><severity>0</severity></rule>
-    <rule ref="Squiz.Commenting.FunctionComment.InvalidReturn"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.LongConditionClosingComment.Missing"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.PostStatementComment.Found"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.VariableComment.LongNotCapital"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.VariableComment.MissingShort"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.VariableComment.ShortNotCapital"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.VariableComment.ShortFullStop"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.VariableComment.SpacingBeforeTags"><severity>0</severity></rule>
-	<rule ref="Squiz.Commenting.VariableComment.IncorrectVarType"><severity>0</severity></rule>
-	<rule ref="Squiz.ControlStructures.ControlSignature"><severity>0</severity></rule>
-	<rule ref="Squiz.ControlStructures.ElseIfDeclaration.NotAllowed"><severity>0</severity></rule>
-	<rule ref="Squiz.ControlStructures.InlineIfDeclaration.NoBrackets"><severity>0</severity></rule>
-	<rule ref="Squiz.ControlStructures.SwitchDeclaration.BreakIndent"><severity>0</severity></rule>
-	<rule ref="Squiz.ControlStructures.SwitchDeclaration.SpacingAfterBreak"><severity>0</severity></rule>
-	<rule ref="Squiz.ControlStructures.SwitchDeclaration.DefaultNoBreak"><severity>0</severity></rule>
-	<rule ref="Squiz.Files.FileExtension.ClassFound"><severity>0</severity></rule>
-	<rule ref="Squiz.Formatting.OperatorBracket.MissingBrackets"><severity>0</severity></rule>
-	<rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpaceAfterDefault"><severity>0</severity></rule>
-	<rule ref="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"><severity>0</severity></rule>
-	<rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpaceBeforeEquals"><severity>0</severity></rule>
-	<rule ref="Squiz.NamingConventions.ConstantCase.Found"><severity>0</severity></rule>
-	<rule ref="Squiz.NamingConventions.ValidFunctionName.PublicUnderscore"><severity>0</severity></rule>
-	<rule ref="Squiz.NamingConventions.ValidFunctionName.PrivateNoUnderscore"><severity>0</severity></rule>
-	<rule ref="Squiz.NamingConventions.ValidVariableName.PublicHasUnderscore"><severity>0</severity></rule>
-	<rule ref="Squiz.Objects.ObjectInstantiation.NotAssigned"><severity>0</severity></rule>
-	<rule ref="Squiz.Operators.ComparisonOperatorUsage.NotAllowed"><severity>0</severity></rule>
-	<rule ref="Squiz.Operators.ComparisonOperatorUsage.ImplicitTrue"><severity>0</severity></rule>
-	<rule ref="Squiz.PHP.CommentedOutCode.Found"><severity>0</severity></rule>
-	<rule ref="Squiz.PHP.DisallowComparisonAssignment.AssignedComparison"><severity>0</severity></rule>
-	<rule ref="Squiz.PHP.DisallowComparisonAssignment.AssignedBool"><severity>0</severity></rule>
-	<rule ref="Squiz.PHP.DisallowInlineIf.Found"><severity>0</severity></rule>
-	<rule ref="Squiz.PHP.DisallowMultipleAssignments.Found"><severity>0</severity></rule>
-	<rule ref="Squiz.PHP.DisallowMultipleAssignments.Found"><severity>0</severity></rule>
-	<rule ref="Squiz.PHP.ForbiddenFunctions.Found"><severity>0</severity></rule>
-	<rule ref="Squiz.PHP.Heredoc.NotAllowed"><severity>0</severity></rule>
-	<rule ref="Squiz.Strings.ConcatenationSpacing.Missing"><severity>0</severity></rule>
-	<rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar"><severity>0</severity></rule>
-	<rule ref="Squiz.WhiteSpace.ControlStructureSpacing.NoLineAfterClose"><severity>0</severity></rule>
-	<rule ref="Squiz.WhiteSpace.FunctionClosingBraceSpace.SpacingBeforeClose"><severity>0</severity></rule>
-	<rule ref="Squiz.WhiteSpace.FunctionSpacing.After"><severity>0</severity></rule>
-	<rule ref="Squiz.WhiteSpace.FunctionSpacing.Before"><severity>0</severity></rule>
-	<rule ref="Squiz.WhiteSpace.MemberVarSpacing.After"><severity>0</severity></rule>
-	<rule ref="Squiz.WhiteSpace.OperatorSpacing.NoSpaceAfterAmp"><severity>0</severity></rule>
-	<rule ref="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"><severity>0</severity></rule>
-	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"><severity>0</severity></rule>
-	<rule ref="Squiz.WhiteSpace.OperatorSpacing.NoSpaceBeforeAmp"><severity>0</severity></rule>
-    <rule ref="Squiz.Functions.GlobalFunction">
-        <exclude name="Squiz.Functions.GlobalFunction.Found"/>
-    </rule>
-		
-	<!-- severity=1 -->
-	<rule ref="Squiz.Strings.DoubleQuoteUsage.NotRequired"><severity>1</severity></rule>
-	<rule ref="Squiz.Commenting.FunctionComment.MissingShort"><severity>1</severity></rule>
-	<rule ref="Squiz.Commenting.FunctionComment.MissingReturnType"><severity>1</severity></rule>
-	<rule ref="Squiz.Commenting.FunctionComment.ParameterCommentsNotAligned"><severity>1</severity></rule>
-	<rule ref="Squiz.Commenting.FunctionComment.SpacingAfterParams"><severity>1</severity></rule>
-    <rule ref="Squiz.Commenting.FunctionComment.MissingParamTag"><severity>1</severity></rule>
-    <rule ref="Squiz.Commenting.FunctionComment.MissingParamTag"><severity>1</severity></rule>
-    <rule ref="Squiz.Commenting.FunctionComment.MissingReturn"><severity>1</severity></rule>
-    <rule ref="Squiz.Commenting.FunctionCommentThrowTag.Missing"><severity>1</severity></rule>
-	<rule ref="Generic.WhiteSpace.ScopeIndent.Incorrect"><severity>1</severity></rule>
-	<rule ref="Generic.Metrics.CyclomaticComplexity.TooHigh"><severity>1</severity></rule>
 </ruleset>
